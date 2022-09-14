@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/test/purchase', 'OtpController@confirmationPage');
+Route::post('/test/otp-request', 'OtpController@requestForOtp')->name('requestForOtp');
+Route::post('/test/otp-validate', 'OtpController@validateOtp')->name('validateOtp');
+Route::post('/test/otp-resend', 'OtpController@resendOtp')->name('resendOtp');
