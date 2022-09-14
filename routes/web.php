@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\OtpController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +15,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('achat');
 });
-Route::get('/test/purchase', 'OtpController@confirmationPage');
-Route::post('/test/otp-request', 'OtpController@requestForOtp')->name('requestForOtp');
-Route::post('/test/otp-validate', 'OtpController@validateOtp')->name('validateOtp');
-Route::post('/test/otp-resend', 'OtpController@resendOtp')->name('resendOtp');
+Route::get('/test/purchase', [OtpController::class,'confirmationPage']);
+Route::post('/test/otp-request', [OtpController::class,'requestForOtp'])->name('requestForOtp');
+Route::post('/test/otp-validate', [OtpController::class,'validateOtp'])->name('validateOtp');
+Route::post('/test/otp-resend', [OtpController::class,'resendOtp'])->name('resendOtp');
+// Route::post('/test/otp-request', 'OtpController@requestForOtp')->name('requestForOtp');
+// Route::post('/test/otp-validate', 'OtpController@validateOtp')->name('validateOtp');
+// Route::post('/test/otp-resend', 'OtpController@resendOtp')->name('resendOtp');
