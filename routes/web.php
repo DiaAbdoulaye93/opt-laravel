@@ -15,8 +15,11 @@ use App\Http\Controllers\OtpController;
 */
 
 Route::get('/', function () {
-    return view('achat');
+    return view('welcome');
 });
+// Route::get('/', function () {
+//     return view('achat');
+// });
 Route::get('/test/purchase', [OtpController::class,'confirmationPage']);
 Route::post('/test/otp-request', [OtpController::class,'requestForOtp'])->name('requestForOtp');
 Route::post('/test/otp-validate', [OtpController::class,'validateOtp'])->name('validateOtp');
