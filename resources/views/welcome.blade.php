@@ -8,6 +8,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" ></script>
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 <style>
@@ -200,9 +201,9 @@ body, ul, li, p, a, label, input, div {
 <!-- Header -->
 <nav class="navbar navbar-expand-lg navbar-light shadow">
   <div class="container d-flex justify-content-between align-items-center">
-
+        <span class="ml-4">shop</span>
       <a class="navbar-brand text-success logo h1 align-self-center" href="#">
-          Jassa
+         <strong style="font-size: 100px;">A</strong> 2 D
       </a>
 
       <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -288,12 +289,10 @@ body, ul, li, p, a, label, input, div {
                   </div>
                   <div class="col-lg-6 mb-0 d-flex align-items-center">
                       <div class="text-align-left align-self-center">
-                          <h1 class="h1 text-success"><b>Jassa</b> eCommerce</h1>
-                          <h3 class="h2">Lorem Ipsum Lorem Ipsum</h3>
+                          <h1 class="h1 text-success"><b>Stan Smith</b></h1>
+                          <h3 class="h2">Chaussure de sport</h3>
                           <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                            when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                          L'Adidas Stan Smith est une chaussure de tennis produite par Adidas et sortie en 1964. D'abord appelée Robert Haillet du nom de son concepteur français, elle devient dans les années 1970 la Stan Smith, à la suite de l'accord de la marque avec le joueur de tennis américain
                           </p>
                       </div>
                   </div>
@@ -366,18 +365,18 @@ body, ul, li, p, a, label, input, div {
   <div class="row">
       <div class="col-12 col-md-4 p-5 mt-3">
           <a href="#"><img src="https://therichpost.com/wp-content/uploads/2021/05/category_img_01.jpg" class="rounded-circle img-fluid border"></a>
-          <h5 class="text-center mt-3 mb-3">Watches</h5>
-          <p class="text-center"><a class="btn btn-success">Go Shop</a></p>
+          <h5 class="text-center mt-3 mb-3">Montres</h5>
+          <p class="text-center"><a class="btn btn-success" data-name="montre" data-summary="summary 2">Acheter</a></p>
       </div>
       <div class="col-12 col-md-4 p-5 mt-3">
           <a href="#"><img src="https://therichpost.com/wp-content/uploads/2021/05/category_img_02.jpg" class="rounded-circle img-fluid border"></a>
-          <h2 class="h5 text-center mt-3 mb-3">Shoes</h2>
-          <p class="text-center"><a class="btn btn-success">Go Shop</a></p>
+          <h2 class="h5 text-center mt-3 mb-3">Chaussures</h2>
+          <p class="text-center"><a class="btn btn-success" data-name="chaussures" data-summary="summary 2">Acheter</a></p>
       </div>
       <div class="col-12 col-md-4 p-5 mt-3">
           <a href="#"><img src="https://therichpost.com/wp-content/uploads/2021/05/category_img_03.jpg" class="rounded-circle img-fluid border"></a>
           <h2 class="h5 text-center mt-3 mb-3">Accessories</h2>
-          <p class="text-center"><a class="btn btn-success">Go Shop</a></p>
+          <p class="text-center"><a class="btn btn-success" data-name="accessoires" data-summary="summary 2">Acheter</a></p>
       </div>
   </div>
 </section>
@@ -389,7 +388,7 @@ body, ul, li, p, a, label, input, div {
   <div class="container py-5">
       <div class="row text-center py-3">
           <div class="col-lg-6 m-auto">
-              <h1 class="h1">Featured Product</h1>
+              <h1 class="h1">Produit en vedette</h1>
               <p>
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                 Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
@@ -569,6 +568,6 @@ body, ul, li, p, a, label, input, div {
   </div>
 
 </footer>
-<!-- End Footer -->
+
 </body>
 </html>

@@ -1,5 +1,6 @@
-// require('./bootstrap');
+//  require('./bootstrap');
 let timerOn = true;
+alert('hi');
 function timer(remaining) {
     console.log("hi");
     var m = Math.floor(remaining / 60);
