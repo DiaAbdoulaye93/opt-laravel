@@ -12,32 +12,27 @@ class OtpController extends Controller
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function confirmationPage()
+    public function getconfirmationPage()
     {
        
-        return view('achat');
+        return view('otp_interface');
     }
 
-    /**
-     * @param Request $request
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function requestForOtp(Request $request)
+    public function sendtOTP(Request $request)
     {
         
-        $client_req_id = '007';
+        $client_req_id = rand(0, 1000);
         $number=intVal($request->input('number'));
         $purchase_type=$request->input('purchase_type');
         $email=$request->input('email');
         
 
-        $otp_req = OtpValidator::requestOtp(
+        $otp_req = OtpValidator::getrequestOtp(
             new OtpRequestObject($client_req_id, $number, $purchase_type, $email)
         );
-  dd($otp_req);
+//   dd($otp_req);
         if($otp_req['code'] === 201){
-            dd("oke");
-            return view('product.otp-page')->with($otp_req);
+            return view('otp_interface')->with($otp_req);
         }else{
             dd("okey");
             dd($otp_req);
@@ -53,10 +48,10 @@ class OtpController extends Controller
         $uniqId = $request->input('uniqueId');
         $otp = $request->input('otp');
         $data['resp'] = [
-            200 => 'Order Confirmed !!!',
-            204 => 'Too Many Try, are you human !!!',
-            203 => 'Invalid OTP given',
-            404 => 'Request not found'
+            200 => 'Commande confirmée !!!',
+            204 => 'Trop d\'essais !!!',
+            203 => 'OTP invalide',
+            404 => 'Demande introuvable'
         ];
         $data['validate'] =  OtpValidator::validateOtp(
             new OtpValidateRequestObject($uniqId,$otp)
@@ -66,7 +61,7 @@ class OtpController extends Controller
             //TODO: OTP is correct and with return the transaction ID, proceed with next step
         }
 
-        return view('product.otp-success-fail-page')->with($data);
+        return view('successOrFail')->with($data);
 
     }
 

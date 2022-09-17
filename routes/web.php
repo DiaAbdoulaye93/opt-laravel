@@ -20,11 +20,14 @@ Route::get('/', function () {
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get("/accueil"   , function () {
+    return view('welcome');
+});
 Route::get('/registration', function () {
     return view('achat');
 });
-Route::get('/test/purchase', [OtpController::class,'confirmationPage']);
-Route::post('/validation-achat', [OtpController::class,'requestForOtp'])->name('requestForOtp');
+Route::post('/test/purchase', [OtpController::class,'getconfirmationPage']);
+Route::post('/validation-achat', [OtpController::class,'sendtOTP'])->name('requestForOtp');
 Route::post('/test/otp-validate', [OtpController::class,'validateOtp'])->name('validateOtp');
 Route::post('/test/otp-resend', [OtpController::class,'resendOtp'])->name('resendOtp');
 // Route::post('/test/otp-request', 'OtpController@requestForOtp')->name('requestForOtp');
