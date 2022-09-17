@@ -334,8 +334,9 @@
 <body>
     @include('navbar')
 
-        @yield('content')
-  
+    @yield('content')
+
+    @include('footer')
 
 
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
