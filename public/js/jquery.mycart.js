@@ -10,8 +10,6 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
  * http://asraf-uddin-ahmed.github.io/
  * Copyright (c) 2017 Asraf Uddin Ahmed; Licensed None
  */
-alert('reeeeeelllllleeee');
-
 (function ($) {
   "use strict";
 
@@ -243,7 +241,7 @@ alert('reeeeeelllllleeee');
     $cartBadge.text(ProductManager.getTotalQuantity());
 
     if (!$("#" + idCartModal).length) {
-      $('body').append('<div class="modal fade" id="' + idCartModal + '" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">' + '<div class="modal-dialog" role="document">' + '<div class="modal-content">' + '<div class="modal-header">' + '<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>' + '<h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-shopping-cart"></span> My Cart</h4>' + '</div>' + '<div class="modal-body">' + '<table class="table table-hover table-responsive" id="' + idCartTable + '"></table>' + '</div>' + '<div class="modal-footer">' + '<button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>' + '<button type="button" class="btn btn-success ' + classCheckoutCart + '">Valider</button>' + '</div>' + '</div>' + '</div>' + '</div>');
+      $('body').append('<div class="modal fade" id="' + idCartModal + '" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">' + '<div class="modal-dialog" role="document">' + '<div class="modal-content">' + '<div class="modal-header">' + '<h2 class="modal-title text-success" id="myModalLabel"> Mon panier <span class="glyphicon glyphicon-shopping-cart text-danger ml-3"></span></h2>' + '<button type="button" class="close ml-6" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>' + '</div>' + '<div class="modal-body">' + '<table class="table table-hover table-responsive" id="' + idCartTable + '"></table>' + '</div>' + '<div class="modal-footer">' + '<button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>' + ' <a href="/registration" type="button" class="btn btn-success">valider<a>' + '</div>' + '</div>' + '</div>' + '</div>');
     }
 
     var drawTable = function drawTable() {
@@ -332,25 +330,22 @@ alert('reeeeeelllllleeee');
         drawTable();
         $cartBadge.text(ProductManager.getTotalQuantity());
       });
-    });
-    $(document).on('click', "." + classCheckoutCart, function () {
-      alert('hello');
-      var products = ProductManager.getAllProducts();
+    }); // $(document).on('click', "." + classCheckoutCart, function () {
+    //   alert('hello');
+    //   var products = ProductManager.getAllProducts();
+    //   if (!products.length) {
+    //     $("#" + idEmptyCartMessage).fadeTo('fast', 0.5).fadeTo('fast', 1.0);
+    //     return;
+    //   }
+    //   updateCart();
+    //   var isCheckedOut = options.checkoutCart(ProductManager.getAllProducts(), ProductManager.getTotalPrice(), ProductManager.getTotalQuantity());
+    //   if (isCheckedOut !== false) {
+    //     ProductManager.clearProduct();
+    //     $cartBadge.text(ProductManager.getTotalQuantity());
+    //     $("#" + idCartModal).modal("hide");
+    //   }
+    // });
 
-      if (!products.length) {
-        $("#" + idEmptyCartMessage).fadeTo('fast', 0.5).fadeTo('fast', 1.0);
-        return;
-      }
-
-      updateCart();
-      var isCheckedOut = options.checkoutCart(ProductManager.getAllProducts(), ProductManager.getTotalPrice(), ProductManager.getTotalQuantity());
-
-      if (isCheckedOut !== false) {
-        ProductManager.clearProduct();
-        $cartBadge.text(ProductManager.getTotalQuantity());
-        $("#" + idCartModal).modal("hide");
-      }
-    });
     $(document).on('click', targetSelector, function () {
       var $target = $(this);
       options.clickOnAddToCart($target);

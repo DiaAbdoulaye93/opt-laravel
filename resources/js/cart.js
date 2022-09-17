@@ -44,7 +44,7 @@ $(function () {
         $.each(products, function(){
           checkoutString += ("\n " + this.id + " \t " + this.name + " \t " + this.summary + " \t " + this.price + " \t " + this.quantity + " \t " + this.image);
         });
-        alert(checkoutString)
+       
         console.log("checking out", products, totalPrice, totalQuantity);
       },
       getDiscountPrice: function(products, totalPrice, totalQuantity) {

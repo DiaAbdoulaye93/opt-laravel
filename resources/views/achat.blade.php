@@ -1,9 +1,87 @@
-@extends('baseview')
+@extends('index')
+@section('content')
+<div class="container">
 
-@section('body')
-    <div class="col-md-4 order-md-2 mb-4">
+    <div class="col-md-7 order-md-1">
+        <h4 class="mb-3">Achat de produit</h4>
+        <form class="needs-validation" action="{{route('requestForOtp')}}" method="post" novalidate>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="firstName">Preénom</label>
+                    <input type="text" class="form-control" name="name" id="fitrsname" placeholder="Ex: Abdoulaye" value="" required>
+                    <div class="invalid-feedback">
+                        Le prénom est obligatoire.
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="firstName">Nom</label>
+                    <input type="text" class="form-control" name="name" id="name" placeholder="Ex: Dia" value="" required>
+                    <div class="invalid-feedback">
+                        Le nom est ob ligatoire.
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="lastName">Mobile</label>
+                    <input type="number" class="form-control" name="number" id="number" placeholder="Ex: +221 77 197 07 77 " value="" required>
+                    <div class="invalid-feedback">
+                        Le telephone est obligatoire..
+                    </div>
+                </div>
+                <div class="col-md-6  mb-3">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Ex: vous@example.com" required>
+                    <div class="invalid-feedback">
+                        L'email est obligatoire..
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="mb-3">
+                <label for="address">Address</label>
+                <input type="text" class="form-control" id="address" placeholder="Ex: 70 sicap mermoz">
+                <div class="invalid-feedback">
+                    Saisir une adresse de livraison.
+                </div>
+            </div>
+
+            <hr class="mb-4">
+          
+            <h4 class="mb-4">Methode de paiment</h4>
+            <div class="form-group col-12">
+                <div class="form-check form-check-inline">
+                    <label class="form-check-label" for="inlineRadio1">Payement en ligne</label>
+                    <input class="form-check-input btn-success" type="radio" name="paymentMethod" id="inlineRadio1" value="Espece">
+                </div>
+                <div class="form-check form-check-inline">
+                    <label class="form-check-label" for="inlineRadio2">Payement aprés livraison</label>
+                    <input class="form-check-input btn-success" type="radio" name="paymentMethod" id="inlineRadio2" value="OM">
+                </div>
+            
+            </div>
+<!-- 
+            <div class="row d-block my-3">
+                <div class="form-control">
+                    <input id="credit" name="paymentMethod" type="radio" class="form-control " required>
+                    <label class="custom-control-label" for="credit">Payer a la livraison</label>
+                </div>
+                <div class="form-control">
+                    <input id="credit" name="paymentMethod" type="radio" class="form-control " required>
+                    <label class="custom-control-label" for="credit">Payer a la livraison</label>
+                </div>
+            </div> -->
+            <hr class="mb-4">
+            {!! csrf_field() !!}
+            <input id="purchase-type" name="purchase_type" type="hidden" value="buy-product">
+            <button class="btn btn-success btn-lg btn-block" type="submit">Generer un code de sécurité</button>
+        </form>
+    </div>
+    <div class="col-md-4 order-md-2 mb-4 float-right">
         <h4 class="d-flex justify-content-between align-items-center mb-3">
-            <span class="text-muted">Your cart</span>
+            <span class="text-muted">Votre panier</span>
             <span class="badge badge-secondary badge-pill">2</span>
         </h4>
         <ul class="list-group mb-3">
@@ -26,67 +104,6 @@
                 <strong>$20</strong>
             </li>
         </ul>
-
-        <form class="card p-2">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Coupon Code">
-                <div class="input-group-append">
-                    <button type="submit" class="btn btn-secondary">Redeem</button>
-                </div>
-            </div>
-        </form>
     </div>
-    <div class="col-md-8 order-md-1">
-        <h4 class="mb-3">Product Purchase</h4>
-        <form class="needs-validation" action="{{route('requestForOtp')}}" method="post" novalidate>
-            <div class="row">
-                <div class="col-md-6 mb-3">
-                    <label for="firstName">Name</label>
-                    <input type="text" class="form-control" name="name" id="name" placeholder="John" value="" required>
-                    <div class="invalid-feedback">
-                        Valid name is required.
-                    </div>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <label for="lastName">Mobile</label>
-                    <input type="number" class="form-control" name="number" id="number" placeholder="+8801xxxxxxxx"
-                           value="" required>
-                    <div class="invalid-feedback">
-                        Valid number is required.
-                    </div>
-                </div>
-            </div>
-
-            <div class="mb-3">
-                <label for="email">Email <span class="text-muted">(Optional)</span></label>
-                <input type="email" class="form-control" name="email" id="email" placeholder="you@example.com" required>
-                <div class="invalid-feedback">
-                    Please enter a valid email address for shipping updates.
-                </div>
-            </div>
-
-            <div class="mb-3">
-                <label for="address">Address</label>
-                <input type="text" class="form-control" id="address" placeholder="1234 Main St">
-                <div class="invalid-feedback">
-                    Please enter your shipping address.
-                </div>
-            </div>
-
-            <hr class="mb-4">
-
-            <h4 class="mb-3">Payment</h4>
-
-            <div class="d-block my-3">
-                <div class="custom-control custom-radio">
-                    <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
-                    <label class="custom-control-label" for="credit">Cash On Delivery</label>
-                </div>
-            </div>
-            <hr class="mb-4">
-            {!! csrf_field() !!}
-            <input id="purchase-type" name="purchase_type" type="hidden" value="buy-product">
-            <button class="btn btn-primary btn-lg btn-block" type="submit">Request Security Code</button>
-        </form>
-    </div>
+</div>
 @endsection
