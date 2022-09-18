@@ -164,6 +164,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Ferdous\OtpValidator\OtpValidatorServiceProvider::class,
+        RealRashid\SweetAlert\SweetAlertServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -192,7 +193,8 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
-        'OtpValidator' => Ferdous\OtpValidator\OtpValidatorServiceProvider::class
+        'OtpValidator' => Ferdous\OtpValidator\OtpValidatorServiceProvider::class,
+        'Alert' => RealRashid\SweetAlert\Facades\Alert::class
     ])->toArray(),
 
 ];

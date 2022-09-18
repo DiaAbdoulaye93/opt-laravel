@@ -23,7 +23,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
       classProductQuantity: 'my-product-quantity',
       classProductRemove: 'my-product-remove',
       classCheckoutCart: 'my-cart-checkout',
-      affixCartIcon: true,
+      affixCartIcon: false,
       showCheckoutModal: true,
       numberOfDecimals: 2,
       cartItems: null,
@@ -241,7 +241,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
     $cartBadge.text(ProductManager.getTotalQuantity());
 
     if (!$("#" + idCartModal).length) {
-      $('body').append('<div class="modal fade" id="' + idCartModal + '" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">' + '<div class="modal-dialog" role="document">' + '<div class="modal-content">' + '<div class="modal-header bg-success">' + '<h2 class="modal-title text-light" id="myModalLabel"> Mon panier</h2>' + '<button type="button" class="close ml-6 bg-danger" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>' + '</div>' + '<div class="modal-body">' + '<table class="table table-hover table-responsive" id="' + idCartTable + '"></table>' + '</div>' + '<div class="modal-footer">' + '<button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>' + ' <a href="/registration" type="button" class="btn btn-success">valider<a>' + '</div>' + '</div>' + '</div>' + '</div>');
+      $('body').append('<div class="modal fade" id="' + idCartModal + '" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">' + '<div class="modal-dialog" role="document">' + '<div class="modal-content">' + '<div class="modal-header bg-success">' + '<h2 class="modal-title text-light" id="myModalLabel"> Mon panier</h2>' + '<button type="button" class="close ml-6 bg-danger" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>' + '</div>' + '<div class="modal-body">' + '<table class="table table-hover table-responsive" id="' + idCartTable + '"></table>' + '</div>' + '<div class="modal-footer">' + '<button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>' + ' <a href="/informations-personnels" type="button" class="btn btn-success">valider<a>' + '</div>' + '</div>' + '</div>' + '</div>');
     }
 
     var drawTable = function drawTable() {
@@ -347,8 +347,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
     // });
 
     $(document).on('click', targetSelector, function () {
-      var $target = $(this);
-      options.clickOnAddToCart($target);
+      var $target = $(this); // options.clickOnAddToCart($target);
+
       var id = $target.data('id');
       var name = $target.data('name');
       var summary = $target.data('summary');

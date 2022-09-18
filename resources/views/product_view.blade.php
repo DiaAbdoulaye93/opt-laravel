@@ -25,7 +25,7 @@
                             <h1 class="h1 text-success"><b>Stan Smith</b></h1>
                             <h3 class="h2">Chaussure de sport</h3>
                             <p>
-                                L'Adidas Stan Smith est une chaussure de tennis produite par Adidas et sortie en 1964. D'abord appelée Robert Haillet du nom de son concepteur français, elle devient dans les années 1970 la Stan Smith, à la suite de l'accord de la marque avec le joueur de tennis américain
+                                L'Adidas Stan Smith est une chaussure de tennis produite par Adidas et sortie en 1964. D'abord appelée Robert Haillet du nom de son concepteur français, elle devient dans les années 1970 la Stan Smith, à la suite de l'accord de la marque avec le joueur de tennis américain.
                             </p>
                         </div>
                     </div>

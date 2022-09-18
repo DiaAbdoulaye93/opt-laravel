@@ -7,7 +7,7 @@
                     <ul class="list-unstyled text-light footer-link-list">
                         <li>
                             <i class="fas fa-map-marker-alt fa-fw"></i>
-                            Sénégal
+                            Tambacounda <span class="text text-success"> (Sénégal) </span>
                         </li>
                         <li>
                             <i class="fa fa-phone fa-fw"></i>
@@ -21,7 +21,7 @@
                 </div>
 
                 <div class="col-md-4 pt-5">
-                    <h2 class="h2 text-light border-bottom pb-3 border-light">Catégories</h2>
+                    <h2 class="h2 text-light border-bottom pb-3 border-success">Catégories</h2>
                     <ul class="list-unstyled text-light footer-link-list">
                         <li><a class="text-decoration-none" href="#">Accéssoires</a></li>
                         <li><a class="text-decoration-none" href="#">Chaussures pour Hommes</a></li>
@@ -33,7 +33,7 @@
                 </div>
 
                 <div class="col-md-4 pt-5">
-                    <h2 class="h2 text-light border-bottom pb-3 border-light">Autres Information</h2>
+                    <h2 class="h2 text-light border-bottom pb-3 border-success">Autres Informations</h2>
                     <ul class="list-unstyled text-light footer-link-list">
                         <li><a class="text-decoration-none" href="#">Accueil</a></li>
                         <li><a class="text-decoration-none" href="#">A prposos de nous</a></li>
@@ -78,9 +78,9 @@
             <div class="container">
                 <div class="row pt-2">
                     <div class="col-12">
-                        <p class="text-left text-light">
-                            Copyright &copy; 2022 A2D  <span style="font-size: 12px;">store</span>
-                            | Designed by <a rel="sponsored" href="#" target="_blank">Jassa</a>
+                        <p class="text-center text-light">
+                            Copyright &copy; 2022  <span class="text-success">A2D</span>  <span class="text-success" style="font-size: 12px;">store</span>
+                            | Crée par   <span class="glyphicon glyphicon-heart text-success"></span> <a rel="sponsored" href="#" target="_blank">par Abdoulaye Djibril Dia</a>
                         </p>
                     </div>
                 </div>

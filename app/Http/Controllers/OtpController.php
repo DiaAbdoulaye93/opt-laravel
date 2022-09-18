@@ -6,6 +6,7 @@ use Ferdous\OtpValidator\Object\OtpRequestObject;
 use Ferdous\OtpValidator\Object\OtpValidateRequestObject;
 use Ferdous\OtpValidator\OtpValidator;
 use Illuminate\Http\Request;
+use Alert;
 
 class OtpController extends Controller
 {
@@ -14,7 +15,7 @@ class OtpController extends Controller
      */
     public function getconfirmationPage()
     {
-
+       
         return view('otp_interface');
     }
     /**
@@ -29,25 +30,24 @@ class OtpController extends Controller
 
     public function sendtOTP(Request $request)
     {
-
         $client_req_id = rand(0, 1000);
         $number = intVal($request->input('number'));
         $purchase_type = $request->input('purchase_type');
         $email = $request->input('email');
 
-
         $otp_req = OtpValidator::getrequestOtp(
             new OtpRequestObject($client_req_id, $number, $purchase_type, $email)
         );
         if ($otp_req['code'] === 201) {
-            return view('otp_interface')->with($otp_req);
+            return view('otp_interface', compact('otp_req', 'email', 'number'));
+         
+            // return view('otp_interface')->witch($otp_req,$email,$number);
         } else {
-            dd("okey");
             dd($otp_req);
         }
     }
 
-   
+
 
     /**
      * @param Request $request
@@ -68,6 +68,7 @@ class OtpController extends Controller
         );
 
         if ($data['validate']['code'] === 200) {
+            toast('Votre commande à bien été confirmée!','success');
             //TODO: OTP is correct and with return the transaction ID, proceed with next step
         }
 

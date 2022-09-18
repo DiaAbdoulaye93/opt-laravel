@@ -332,10 +332,9 @@
 </head>
 
 <body>
+    @include('sweetalert::alert')
     @include('navbar')
-
     @yield('content')
-
     @include('footer')
 
 

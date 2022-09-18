@@ -19,7 +19,7 @@
       classProductQuantity: 'my-product-quantity',
       classProductRemove: 'my-product-remove',
       classCheckoutCart: 'my-cart-checkout',
-      affixCartIcon: true,
+      affixCartIcon: false,
       showCheckoutModal: true,
       numberOfDecimals: 2,
       cartItems: null,
@@ -231,7 +231,7 @@
         '</div>' +
         '<div class="modal-footer">' +
         '<button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>' +
-        ' <a href="/registration" type="button" class="btn btn-success">valider<a>' +
+        ' <a href="/informations-personnels" type="button" class="btn btn-success">valider<a>' +
         '</div>' +
         '</div>' +
         '</div>' +
@@ -369,7 +369,7 @@
 
     $(document).on('click', targetSelector, function () {
       var $target = $(this);
-      options.clickOnAddToCart($target);
+      // options.clickOnAddToCart($target);
 
       var id = $target.data('id');
       var name = $target.data('name');

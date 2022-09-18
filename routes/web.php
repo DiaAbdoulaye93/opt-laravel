@@ -18,15 +18,15 @@ Route::get('/', function () {
     return view('index');
 });
 Route::get('/', function () {
-    return view('welcome');
+    return view('product_view');
 });
 Route::get("/accueil"   , function () {
-    return view('welcome');
+    return view('product_view');
 });
-Route::get('/registration', function () {
-    return view('achat');
+Route::get('/informations-personnels', function () {
+    return view('infos_personnels');
 });
-Route::post('/test/purchase', [OtpController::class,'getconfirmationPage']);
+Route::post('/validation-commande', [OtpController::class,'getconfirmationPage']);
 Route::post('/validation-achat', [OtpController::class,'sendtOTP'])->name('requestForOtp');
 Route::post('/test/otp-validate', [OtpController::class,'validateOtp'])->name('validateOtp');
 Route::post('/test/otp-resend', [OtpController::class,'resendOtp'])->name('resendOtp');

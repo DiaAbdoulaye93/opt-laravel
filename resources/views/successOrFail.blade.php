@@ -5,8 +5,11 @@
 
     @if($validate['code'] == 200)
     <script>
-        // your "Imaginary javascript
-        window.location.href = '{{url("/accueil")}}'; //using a named route
+        setTimeout(function() {
+            window.location.href = '{{url("/accueil")}}';
+        }, 2500);
+        // // your "Imaginary javascript
+        // window.location.href = '{{url("/accueil")}}'; //using a named route
     </script>
     @elseif($validate['code'] == 203 || $validate['code'] == 404)
     @if(isset($validate['resendId']))
