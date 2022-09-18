@@ -3,9 +3,9 @@
             <div class="w-100 d-flex justify-content-between">
                 <div>
                     <i class="fa fa-envelope mx-2"></i>
-                    <a class="navbar-sm-brand text-light text-decoration-none" href="#">info@lazy.com</a>
+                    <a class="navbar-md-brand text-light text-decoration-none" href="#">info@lazy.com</a>
                     <i class="fa fa-phone mx-2"></i>
-                    <a class="navbar-sm-brand text-light text-decoration-none" href="#">221 77 197 07 77</a>
+                    <a class="navbar-md-brand text-light text-decoration-none" href="#">221 77 197 07 77</a>
                 </div>
                 <div>
                     <a class="text-light" href="#" target="_blank" rel="sponsored"><i class="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>
@@ -22,9 +22,9 @@
     <!-- Header -->
     <nav class="navbar navbar-expand-lg navbar-light shadow">
         <div class="container d-flex justify-content-between align-items-center">
-            <span class="ml-4">shop</span>
-            <a class="navbar-brand text-success logo h1 align-self-center" href="#">
-                <strong style="font-size: 100px;">A</strong> 2 D
+           
+            <a class="navbar-brand text-success logo align-self-center" href="#">
+                <strong style="font-size: 100px;">A</strong> 2 D <span>store</span>
             </a>
 
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,16 +35,17 @@
                 <div class="flex-fill">
                     <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="/">Home</a>
+                            <a class="nav-link" href="/">Accueil</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
-                        </li>
+                    
                         <li class="nav-item ">
-                            <a class="nav-link ml-3" href="#">Shop</a>
+                            <a class="nav-link ml-5" href="#">Street wear</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
+                            <a class="nav-link ml-5" href="#">Accessoires</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link ml-5" href="#">Electroménager</a>
                         </li>
                     </ul>
                 </div>

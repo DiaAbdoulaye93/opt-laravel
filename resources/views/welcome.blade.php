@@ -50,19 +50,19 @@
 
             <a href="#"><img src="https://therichpost.com/wp-content/uploads/2021/05/category_img_01.jpg" class="rounded-circle img-fluid border"></a>
             <h5 class="text-center mt-3 mb-3">Montres</h5>
-            <p class="text-center"><a class="btn btn-success my-cart-btn" data-id="1" data-name="montre" data-summary="summary 1" data-price="1500" data-quantity="1" data-image="https://therichpost.com/wp-content/uploads/2021/05/category_img_01.jpg">
+            <p class="text-center"><a class="btn btn-success text-light my-cart-btn" data-id="1" data-name="montre" data-summary="summary 1" data-price="1500" data-quantity="1" data-image="https://therichpost.com/wp-content/uploads/2021/05/category_img_01.jpg">
                     Acheter
                 </a></p>
         </div>
         <div class="col-12 col-md-4 p-5 mt-3">
             <a href="#"><img src="https://therichpost.com/wp-content/uploads/2021/05/category_img_02.jpg" class="rounded-circle img-fluid border"></a>
             <h2 class="h5 text-center mt-3 mb-3">Chaussures</h2>
-            <p class="text-center"><a class="btn btn-success my-cart-btn" data-id="2" data-name="chaussures" data-summary="summary 2" data-price="1500" data-quantity="1" data-image="https://therichpost.com/wp-content/uploads/2021/05/category_img_02.jpg">Acheter</a></p>
+            <p class="text-center"><a class="btn btn-success text-light my-cart-btn" data-id="2" data-name="chaussures" data-summary="summary 2" data-price="1500" data-quantity="1" data-image="https://therichpost.com/wp-content/uploads/2021/05/category_img_02.jpg">Acheter</a></p>
         </div>
         <div class="col-12 col-md-4 p-5 mt-3">
             <a href="#"><img src="https://therichpost.com/wp-content/uploads/2021/05/category_img_03.jpg" class="rounded-circle img-fluid border"></a>
             <h2 class="h5 text-center mt-3 mb-3">Accessories</h2>
-            <p class="text-center"><a class="btn btn-success  my-cart-btn" data-id="3" data-name="lunettes noire" data-summary="summary 3" data-price="3500" data-quantity="1" data-image="https://therichpost.com/wp-content/uploads/2021/05/category_img_03.jpg">Acheter</a></p>
+            <p class="text-center"><a class="btn btn-success text-light my-cart-btn" data-id="3" data-name="lunettes noire" data-summary="summary 3" data-price="3500" data-quantity="1" data-image="https://therichpost.com/wp-content/uploads/2021/05/category_img_03.jpg">Acheter</a></p>
         </div>
     </div>
 </section>

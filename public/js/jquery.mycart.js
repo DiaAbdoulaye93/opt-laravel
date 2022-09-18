@@ -241,7 +241,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
     $cartBadge.text(ProductManager.getTotalQuantity());
 
     if (!$("#" + idCartModal).length) {
-      $('body').append('<div class="modal fade" id="' + idCartModal + '" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">' + '<div class="modal-dialog" role="document">' + '<div class="modal-content">' + '<div class="modal-header">' + '<h2 class="modal-title text-success" id="myModalLabel"> Mon panier <span class="glyphicon glyphicon-shopping-cart text-danger ml-3"></span></h2>' + '<button type="button" class="close ml-6" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>' + '</div>' + '<div class="modal-body">' + '<table class="table table-hover table-responsive" id="' + idCartTable + '"></table>' + '</div>' + '<div class="modal-footer">' + '<button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>' + ' <a href="/registration" type="button" class="btn btn-success">valider<a>' + '</div>' + '</div>' + '</div>' + '</div>');
+      $('body').append('<div class="modal fade" id="' + idCartModal + '" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">' + '<div class="modal-dialog" role="document">' + '<div class="modal-content">' + '<div class="modal-header bg-success">' + '<h2 class="modal-title text-light" id="myModalLabel"> Mon panier</h2>' + '<button type="button" class="close ml-6 bg-danger" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>' + '</div>' + '<div class="modal-body">' + '<table class="table table-hover table-responsive" id="' + idCartTable + '"></table>' + '</div>' + '<div class="modal-footer">' + '<button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>' + ' <a href="/registration" type="button" class="btn btn-success">valider<a>' + '</div>' + '</div>' + '</div>' + '</div>');
     }
 
     var drawTable = function drawTable() {
@@ -250,7 +250,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
       var products = ProductManager.getAllProducts();
       $.each(products, function () {
         var total = this.quantity * this.price;
-        $cartTable.append('<tr title="' + this.summary + '" data-id="' + this.id + '" data-price="' + this.price + '">' + '<td class="text-center" style="width: 30px;"><img width="30px" height="30px" src="' + this.image + '"/></td>' + '<td>' + this.name + '</td>' + '<td title="Unit Price" class="text-right">' + MathHelper.getRoundedNumber(this.price) + ' ' + options.currencySymbol + '</td>' + '<td title="Quantity"><input type="number" min="1" style="width: 70px;" class="' + classProductQuantity + '" value="' + this.quantity + '"/></td>' + '<td title="Total" class="text-right ' + classProductTotal + '">' + MathHelper.getRoundedNumber(total) + ' ' + options.currencySymbol + '</td>' + '<td title="Remove from Cart" class="text-center" style="width: 30px;"><a href="javascript:void(0);" class="btn btn-xs btn-danger ' + classProductRemove + '">X</a></td>' + '</tr>');
+        $cartTable.append('<tr title="' + this.summary + '" data-id="' + this.id + '" data-price="' + this.price + '">' + '<td class="text-center" style="width: 30px;"><img width="30px" height="30px" src="' + this.image + '"/></td>' + '<td>' + this.name + '</td>' + '<td title="Unit Price" class="text-right">' + MathHelper.getRoundedNumber(this.price) + ' ' + options.currencySymbol + '</td>' + '<td title="Quantity"><input type="number" min="1" style="width: 70px;" class="' + classProductQuantity + '" value="' + this.quantity + '"/></td>' + '<td title="Total" class="text-right ' + classProductTotal + '">' + MathHelper.getRoundedNumber(total) + ' ' + options.currencySymbol + '</td>' + '<td title="Remove from Cart" class="text-center" style="width: 30px;"><a href="javascript:void(0);" class="btn btn-xs btn-danger ' + classProductRemove + '"><span class="glyphicon glyphicon-trash"></span></a></td>' + '</tr>');
       });
       $cartTable.append(products.length ? '<tr>' + '<td></td>' + '<td><strong>Total</strong></td>' + '<td></td>' + '<td></td>' + '<td class="text-right"><strong id="' + idGrandTotal + '"></strong></td>' + '<td></td>' + '</tr>' : '<div class="alert alert-danger" role="alert" id="' + idEmptyCartMessage + '">Aucun produit dans votre panier</div>'); // var discountPrice = options.getDiscountPrice(products, ProductManager.getTotalPrice(), ProductManager.getTotalQuantity());
       // if (products.length && discountPrice !== null) {
@@ -309,7 +309,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
       var price = $(this).closest("tr").data("price");
       var id = $(this).closest("tr").data("id");
       var quantity = $(this).val();
-      $(this).parent("td").next("." + classProductTotal).text(options.currencySymbol + MathHelper.getRoundedNumber(price * quantity));
+      $(this).parent("td").next("." + classProductTotal).text(MathHelper.getRoundedNumber(price * quantity) + ' ' + options.currencySymbol);
       ProductManager.updatePoduct(id, quantity);
       $cartBadge.text(ProductManager.getTotalQuantity());
       showGrandTotal();

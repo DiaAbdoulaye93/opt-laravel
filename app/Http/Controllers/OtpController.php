@@ -14,30 +14,40 @@ class OtpController extends Controller
      */
     public function getconfirmationPage()
     {
-       
+
         return view('otp_interface');
+    }
+    /**
+     * @param int $defaultDigit
+     * @return int
+     */
+    private static function randomOtpGen(int $defaultDigit = 4)
+    {
+        $digit = config('otp.digit') ?? $defaultDigit;
+        return rand(pow(10, $digit - 1), pow(10, $digit) - 1);
     }
 
     public function sendtOTP(Request $request)
     {
-        
+
         $client_req_id = rand(0, 1000);
-        $number=intVal($request->input('number'));
-        $purchase_type=$request->input('purchase_type');
-        $email=$request->input('email');
-        
+        $number = intVal($request->input('number'));
+        $purchase_type = $request->input('purchase_type');
+        $email = $request->input('email');
+
 
         $otp_req = OtpValidator::getrequestOtp(
             new OtpRequestObject($client_req_id, $number, $purchase_type, $email)
         );
-//   dd($otp_req);
-        if($otp_req['code'] === 201){
+        if ($otp_req['code'] === 201) {
             return view('otp_interface')->with($otp_req);
-        }else{
+        } else {
             dd("okey");
             dd($otp_req);
         }
     }
+
+   
 
     /**
      * @param Request $request
@@ -54,15 +64,14 @@ class OtpController extends Controller
             404 => 'Demande introuvable'
         ];
         $data['validate'] =  OtpValidator::validateOtp(
-            new OtpValidateRequestObject($uniqId,$otp)
+            new OtpValidateRequestObject($uniqId, $otp)
         );
 
-        if($data['validate']['code'] === 200){
+        if ($data['validate']['code'] === 200) {
             //TODO: OTP is correct and with return the transaction ID, proceed with next step
         }
 
         return view('successOrFail')->with($data);
-
     }
 
     /**
@@ -74,9 +83,9 @@ class OtpController extends Controller
         $uniqueId = $request->input('uniqueId');
         $otp_req = OtpValidator::resendOtp($uniqueId);
 
-        if(isset($otp_req['code']) && $otp_req['code'] === 201){
+        if (isset($otp_req['code']) && $otp_req['code'] === 201) {
             return view('product.otp-page')->with($otp_req);
-        }else{
+        } else {
             dd($otp_req);
         }
     }

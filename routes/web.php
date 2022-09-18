@@ -30,6 +30,7 @@ Route::post('/test/purchase', [OtpController::class,'getconfirmationPage']);
 Route::post('/validation-achat', [OtpController::class,'sendtOTP'])->name('requestForOtp');
 Route::post('/test/otp-validate', [OtpController::class,'validateOtp'])->name('validateOtp');
 Route::post('/test/otp-resend', [OtpController::class,'resendOtp'])->name('resendOtp');
+Route::get('send-sms-notification', [OtpController::class, 'sendSmsNotificaition']);
 // Route::post('/test/otp-request', 'OtpController@requestForOtp')->name('requestForOtp');
 // Route::post('/test/otp-validate', 'OtpController@validateOtp')->name('validateOtp');
 // Route::post('/test/otp-resend', 'OtpController@resendOtp')->name('resendOtp');

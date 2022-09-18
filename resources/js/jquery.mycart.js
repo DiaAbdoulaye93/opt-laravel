@@ -222,9 +222,9 @@
         '<div class="modal fade" id="' + idCartModal + '" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">' +
         '<div class="modal-dialog" role="document">' +
         '<div class="modal-content">' +
-        '<div class="modal-header">' +
-        '<h2 class="modal-title text-success" id="myModalLabel"> Mon panier <span class="glyphicon glyphicon-shopping-cart text-danger ml-3"></span></h2>' +
-        '<button type="button" class="close ml-6" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>' +
+        '<div class="modal-header bg-success">' +
+        '<h2 class="modal-title text-light" id="myModalLabel"> Mon panier</h2>' +
+        '<button type="button" class="close ml-6 bg-danger" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>' +
         '</div>' +
         '<div class="modal-body">' +
         '<table class="table table-hover table-responsive" id="' + idCartTable + '"></table>' +
@@ -255,7 +255,7 @@
           '<td title="Unit Price" class="text-right">' + MathHelper.getRoundedNumber(this.price) + ' ' + options.currencySymbol + '</td>' +
           '<td title="Quantity"><input type="number" min="1" style="width: 70px;" class="' + classProductQuantity + '" value="' + this.quantity + '"/></td>' +
           '<td title="Total" class="text-right ' + classProductTotal + '">' + MathHelper.getRoundedNumber(total) + ' ' + options.currencySymbol + '</td>' +
-          '<td title="Remove from Cart" class="text-center" style="width: 30px;"><a href="javascript:void(0);" class="btn btn-xs btn-danger ' + classProductRemove + '">X</a></td>' +
+          '<td title="Remove from Cart" class="text-center" style="width: 30px;"><a href="javascript:void(0);" class="btn btn-xs btn-danger ' + classProductRemove + '"><span class="glyphicon glyphicon-trash"></span></a></td>' +
           '</tr>'
         );
       });
@@ -326,7 +326,7 @@
       var id = $(this).closest("tr").data("id");
       var quantity = $(this).val();
 
-      $(this).parent("td").next("." + classProductTotal).text(options.currencySymbol + MathHelper.getRoundedNumber(price * quantity));
+      $(this).parent("td").next("." + classProductTotal).text(MathHelper.getRoundedNumber(price * quantity) +' '+ options.currencySymbol );
       ProductManager.updatePoduct(id, quantity);
 
       $cartBadge.text(ProductManager.getTotalQuantity());
